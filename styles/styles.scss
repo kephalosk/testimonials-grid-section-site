@@ -5,12 +5,15 @@ $color-dark-blue: #19202D;
 $color-white: #FFFFFF;
 $color-grey-100: #E7EAEE;
 $color-grey-200: #CFCFCF;
+$color-grey-300: #A3AAB4;
 $color-grey-400: #676D7E;
 $color-grey-500: #48556A;
 $color-purple-50: #EDE4FF;
 $color-purple-300: #A775F1;
 $color-purple-500: #733FC8;
 
+$space-80px: functions.to-rem(80px);
+$space-60px: functions.to-rem(60px);
 $space-40px: functions.to-rem(40px);
 $space-32px: functions.to-rem(32px);
 $space-24px: functions.to-rem(24px);
@@ -98,10 +101,110 @@ h2, p {
   margin: 0;
 }
 
+#app {
+  max-width: $max-content-width;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: $space-32px;
+  column-gap: $space-32px;
+
+  @include tablet-and-up{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  @include desktop-and-up{
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.backgroundDarkBlue {
+  background-color: $color-dark-blue;
+}
+
+.backgroundGrey500 {
+  background-color: $color-grey-500;
+}
+
+.backgroundPurple500 {
+  background-color: $color-purple-500;
+}
+
+.backgroundWhite {
+  background-color: $color-white;
+}
+
+.border2PixelPurple {
+  border: 2px solid $color-purple-300;
+}
+
+.card {
+  box-shadow: 32px 32px 50px -20px $color-grey-400;
+  padding: $space-32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: $space-16px;
+}
+
+.cardTextPrimary {
+  @include text-preset-1;
+}
+
+.cardTextSecondary {
+  @include text-preset-3;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  column-gap: $space-16px;
+}
+
+.cardHeaderImage {
+  border-radius: 100%;
+  height: functions.to-rem(28px);
+  width: functions.to-rem(28px);
+}
+
+.cardHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: $space-4px;
+}
+
+.cardHeaderInfoName {
+  @include text-preset-2;
+}
+
+.cardHeaderInfoTitle {
+  @include text-preset-4;
+}
+
+.textColorGrey300 {
+  color: $color-grey-300;
+}
+
+.textColorGrey400 {
+  color: $color-grey-400;
+}
+
+.textColorGrey500 {
+  color: $color-grey-500;
+}
+
+.textColorPurple50 {
+  color: $color-purple-50;
+}
+
+.textColorWhite {
+  color: $color-white;
 }

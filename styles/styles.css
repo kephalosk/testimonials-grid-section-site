@@ -12,6 +12,26 @@ h2, p {
   margin: 0;
 }
 
+#app {
+  max-width: 69.625rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+@media (min-width: 37.5rem) {
+  #app {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+}
+@media (min-width: 60rem) {
+  #app {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -19,6 +39,104 @@ h2, p {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.backgroundDarkBlue {
+  background-color: #19202D;
+}
+
+.backgroundGrey500 {
+  background-color: #48556A;
+}
+
+.backgroundPurple500 {
+  background-color: #733FC8;
+}
+
+.backgroundWhite {
+  background-color: #FFFFFF;
+}
+
+.border2PixelPurple {
+  border: 2px solid #A775F1;
+}
+
+.card {
+  box-shadow: 32px 32px 50px -20px #676D7E;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.cardTextPrimary {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 0.625rem + 0.5vw, 2.5rem);
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.cardTextSecondary {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8125rem, 0.40625rem + 0.5vw, 1.625rem);
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+}
+
+.cardHeaderImage {
+  border-radius: 100%;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.cardHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.cardHeaderInfoName {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8125rem, 0.40625rem + 0.5vw, 1.625rem);
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.cardHeaderInfoTitle {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.6875rem, 0.34375rem + 0.5vw, 1.375rem);
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.textColorGrey300 {
+  color: #A3AAB4;
+}
+
+.textColorGrey400 {
+  color: #676D7E;
+}
+
+.textColorGrey500 {
+  color: #48556A;
+}
+
+.textColorPurple50 {
+  color: #EDE4FF;
+}
+
+.textColorWhite {
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=styles.css.map */
