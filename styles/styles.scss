@@ -92,9 +92,12 @@ $text-preset-4-font-size-max: $text-preset-4-font-size-min * $text-scale-factor-
 }
 
 body {
+  margin: 0;
+  background-color: $color-grey-100;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 h2, p {
@@ -102,27 +105,33 @@ h2, p {
 }
 
 #app {
+  padding: $space-80px $space-32px;
   max-width: $max-content-width;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: $space-32px;
   column-gap: $space-32px;
 
-  @include tablet-and-up{
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 25% 25% 25%;
+  @include tablet-and-up {
+    grid-template-columns: calc(50% - $space-16px) calc(50% - $space-16px);
+    grid-template-rows: calc(25% - $space-24px) calc(25% - $space-24px) calc(25% - $space-24px) calc(25% - $space-24px);
   }
 
-  @include desktop-and-up{
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50% 50%;
+  @include desktop-and-up {
+    grid-template-columns: calc(25% - $space-24px) calc(25% - $space-24px) calc(25% - $space-24px) calc(25% - $space-24px);
+    grid-template-rows: calc(50% - $space-16px) calc(50% - $space-16px);
   }
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -137,6 +146,17 @@ h2, p {
 
 .backgroundPurple500 {
   background-color: $color-purple-500;
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 200% top;
+
+  @include tablet-and-up {
+    background-position: 90% top;
+  }
+
+  @include desktop-and-up {
+    background-position: 85% top;
+  }
 }
 
 .backgroundWhite {
@@ -148,11 +168,72 @@ h2, p {
 }
 
 .card {
-  box-shadow: 32px 32px 50px -20px $color-grey-400;
+  box-shadow: 32px 64px 40px -10px rgb($color-grey-300, 0.5);
+  border-radius: $radius-8px;
   padding: $space-32px;
   display: flex;
   flex-direction: column;
   row-gap: $space-16px;
+}
+
+.card1 {
+  @include tablet-and-up {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+  }
+
+  @include desktop-and-up {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+  }
+}
+
+.card2 {
+  @include tablet-and-up {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+
+  @include desktop-and-up {
+    grid-column: 3 / span 1;
+    grid-row: 1 / 1;
+  }
+}
+
+.card3 {
+  @include tablet-and-up {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+  }
+
+  @include desktop-and-up {
+    grid-column: 1 / span 1;
+    grid-row: 2 / 2;
+  }
+}
+
+.card4 {
+  @include tablet-and-up {
+    grid-column: 1 / span 2;
+    grid-row: 3 / 3;
+  }
+
+  @include desktop-and-up {
+    grid-column: 2 / span 2;
+    grid-row: 2 / 2;
+  }
+}
+
+.card5 {
+  @include tablet-and-up {
+    grid-column: 1 / span 2;
+    grid-row: 4 / 4;
+  }
+
+  @include desktop-and-up {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+  }
 }
 
 .cardTextPrimary {
@@ -166,13 +247,14 @@ h2, p {
 .cardHeader {
   display: flex;
   flex-direction: row;
+  align-items: center;
   column-gap: $space-16px;
 }
 
 .cardHeaderImage {
   border-radius: 100%;
-  height: functions.to-rem(28px);
-  width: functions.to-rem(28px);
+  height: functions.to-rem(32px);
+  width: functions.to-rem(32px);
 }
 
 .cardHeaderInfo {
@@ -187,6 +269,14 @@ h2, p {
 
 .cardHeaderInfoTitle {
   @include text-preset-4;
+}
+
+.textColorGrey100 {
+  color: $color-grey-100;
+}
+
+.textColorGrey200 {
+  color: $color-grey-200;
 }
 
 .textColorGrey300 {
