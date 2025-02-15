@@ -59,7 +59,7 @@ h2, p {
 
 .backgroundPurple500 {
   background-color: #733FC8;
-  background-image: url("../images/bg-pattern-quotation.svg");
+  background-image: url("../assets/images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
   background-position: 200% top;
 }
