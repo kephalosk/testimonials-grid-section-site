@@ -1,0 +1,107 @@
+@use 'functions';
+
+$color-black: #121212;
+$color-dark-blue: #19202D;
+$color-white: #FFFFFF;
+$color-grey-100: #E7EAEE;
+$color-grey-200: #CFCFCF;
+$color-grey-400: #676D7E;
+$color-grey-500: #48556A;
+$color-purple-50: #EDE4FF;
+$color-purple-300: #A775F1;
+$color-purple-500: #733FC8;
+
+$space-40px: functions.to-rem(40px);
+$space-32px: functions.to-rem(32px);
+$space-24px: functions.to-rem(24px);
+$space-16px: functions.to-rem(16px);
+$space-8px: functions.to-rem(8px);
+$space-4px: functions.to-rem(4px);
+
+$radius-8px: functions.to-rem(8px);
+$max-content-width: functions.to-rem(1114px);
+$phone-width: functions.to-rem(600px);
+$tablet-width: functions.to-rem(960px);
+
+$text-scale-factor-partial: 0.5;
+$text-scale-factor-viewport: 0.5vw;
+$text-scale-factor-max: 2;
+
+$text-preset-1-font-size-min: functions.to-rem(20px);
+$text-preset-1-font-size-partial: $text-preset-1-font-size-min * $text-scale-factor-partial;
+$text-preset-1-font-size-max: $text-preset-1-font-size-min * $text-scale-factor-max;
+$text-preset-2-font-size-min: functions.to-rem(13px);
+$text-preset-2-font-size-partial: $text-preset-2-font-size-min * $text-scale-factor-partial;
+$text-preset-2-font-size-max: $text-preset-2-font-size-min * $text-scale-factor-max;
+$text-preset-3-font-size-min: functions.to-rem(13px);
+$text-preset-3-font-size-partial: $text-preset-3-font-size-min * $text-scale-factor-partial;
+$text-preset-3-font-size-max: $text-preset-3-font-size-min * $text-scale-factor-max;
+$text-preset-4-font-size-min: functions.to-rem(11px);
+$text-preset-4-font-size-partial: $text-preset-4-font-size-min * $text-scale-factor-partial;
+$text-preset-4-font-size-max: $text-preset-4-font-size-min * $text-scale-factor-max;
+
+@mixin tablet-and-up {
+  @media (min-width: $phone-width) {
+    @content
+  }
+}
+
+@mixin desktop-and-up {
+  @media (min-width: $tablet-width) {
+    @content
+  }
+}
+
+@mixin text-preset-1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp($text-preset-1-font-size-min, $text-preset-1-font-size-partial + $text-scale-factor-viewport, $text-preset-1-font-size-max);
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-2 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+  font-size: clamp($text-preset-2-font-size-min, $text-preset-2-font-size-partial + $text-scale-factor-viewport, $text-preset-2-font-size-max);
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-3 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+  font-size: clamp($text-preset-3-font-size-min, $text-preset-3-font-size-partial + $text-scale-factor-viewport, $text-preset-3-font-size-max);
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-4 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+  font-size: clamp($text-preset-4-font-size-min, $text-preset-4-font-size-partial + $text-scale-factor-viewport, $text-preset-4-font-size-max);
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2, p {
+  margin: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
